@@ -1,5 +1,5 @@
 from pyramid.view import view_config
-from panels import lopa_panel
+from .panels import lopa_panel
 
 
 @view_config(route_name='home',

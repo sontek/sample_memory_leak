@@ -6,7 +6,7 @@
 <div id="cab_layout">
     Nothing to do
 
-    {% for data in datas.iteritems() %}
-    {{data}}
+    {% for data in datas %}
+        ({{data}}, {{datas[data]}})
     {% endfor %}
 </div>
