@@ -2,13 +2,20 @@ from pyramid.view import view_config
 from .panels import lopa_panel
 
 
-@view_config(route_name='home',
+@view_config(
+    route_name='home',
     renderer='sample_memory_leak:templates/panels/lopa.jinja2',
-    http_cache=0)
+    http_cache=0
+)
+@view_config(
+    route_name='vacation',
+    renderer='sample_memory_leak:templates/panels/lopa.mako',
+    http_cache=0
+)
 def myview(request):
 
     datas = {}
-    for i in range(1,1000):
+    for i in range(1,100000):
         datas[i] = i
 
     return lopa_panel(request.context, request, datas)

@@ -18,7 +18,7 @@ var Lopa = {
 
     refresh: function(){
       console.log('refresh call');
-      var url = '/';
+      var url = window.location.href;
       $.get(url, this.refreshCallback);
 
     },
